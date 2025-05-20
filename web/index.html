@@ -2,12 +2,34 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Portable JS Assistant Chat</title>
+
+  <!-- Poppins font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+
+  <!-- Widget styles (no bundler) -->
+  <link rel="stylesheet" href="./src/styles/chat-widget.css">
 </head>
 <body>
   <h1>Portable JavaScript Assistant Chat Demo</h1>
   <p>Click the chat button in the bottom-right corner to interact with the assistant.</p>
-  <script src="chat-widget.js"></script>
+
+  <!-- Boot the widget + avatar modules directly via native ES imports -->
+  <script type="module">
+    import initWidget from './src/widget/index.js';
+    import './src/avatar/index.js';
+
+    const start = () => initWidget();
+
+    if (
+      document.readyState === 'complete' ||
+      document.readyState === 'interactive'
+    ) {
+      start();
+    } else {
+      document.addEventListener('DOMContentLoaded', start, { once: true });
+    }
+  </script>
 </body>
 </html>
