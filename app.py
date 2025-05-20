@@ -276,7 +276,7 @@ if __name__ == '__main__':
     parser.add_argument('--customvideo_config', type=str, default='', help="custom action json")
 
     parser.add_argument('--tts', type=str, default='edgetts', help="tts service type") #xtts gpt-sovits cosyvoice
-    parser.add_argument('--REF_FILE', type=str, default="zh-CN-YunxiaNeural")
+    parser.add_argument('--REF_FILE', type=str, default="it-IT-DiegoNeural")
     parser.add_argument('--REF_TEXT', type=str, default=None)
     parser.add_argument('--TTS_SERVER', type=str, default='http://127.0.0.1:9880') # http://localhost:9000
     # parser.add_argument('--CHARACTER', type=str, default='test')
@@ -287,7 +287,7 @@ if __name__ == '__main__':
     parser.add_argument('--transport', type=str, default='rtcpush') #rtmp webrtc rtcpush
     parser.add_argument('--push_url', type=str, default='http://localhost:1985/rtc/v1/whip/?app=live&stream=livestream') #rtmp://localhost/live/livestream
 
-    parser.add_argument('--max_session', type=int, default=1)  #multi session count
+    parser.add_argument('--max_session', type=int, default=100)  #multi session count
     parser.add_argument('--listenport', type=int, default=8010, help="web listen port")
 
     opt = parser.parse_args()

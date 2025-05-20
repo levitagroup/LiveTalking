@@ -1,0 +1,2 @@
+python3 app.py --transport webrtc --model wav2lip --avatar_id wav2lip256_avatar1
+python3 genavatar.py --video_path rec2.mp4 --img_size 256 --avatar_id wav2lip256_avatar1
